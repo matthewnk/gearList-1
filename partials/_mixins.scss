@@ -1,0 +1,21 @@
+//text mixins
+
+@mixin text($size: null, $l-height: null, $color: null, $bg-color: null, $weight: null, $align: null) {
+	font-size: $size;
+	line-height: $l-height;
+	color: $color;
+	background-color: $bg-color;
+	font-weight: $weight;
+	text-align: $align;
+}
+
+//positioning mixins
+
+@mixin posOp($pos: null, $top: null, $left: null, $z: null, $op: null) {
+	position: $pos;
+	top: $top;
+	left: $left;
+	z-index: $z;
+	opacity: $op;
+}
+
