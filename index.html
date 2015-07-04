@@ -14,11 +14,10 @@
     </head>
     <body>
       <header> 
-        <h1>
-        </h1>     
+        <h1>Gear Checklist</h1>   
       </header>
-      <div class="list">
-        <h1>Gear Checklist</h1>
+
+      <!-- <div class="list">        
           <ul>
           <li><input type="checkbox"/><label>Backpack</label></li>
           <li><input type="checkbox"/><label>Tent</label></li>
@@ -26,6 +25,21 @@
           <li><input type="checkbox"/><label>Sleeping Pad</label></li>
           <li><input type="checkbox"/><label>Hiking Boots</label></li>
           </ul>
+      </div> -->
+
+      <div class="wordList">
+        <dl id="wordList"></dl>
+      </div>
+
+      <div class"itemEntry">
+        <form id="theForm" action="#">
+              <br><br>
+              <legend for="word">Add Item</legend>
+              <input type="text" id="word" /><br>
+              <br>
+              <button id="addButton">Add Item to List</button>
+              <button id="clearButton">Clear List</button><br><br>
+            </form>
       </div>
       
             

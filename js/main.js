@@ -1,5 +1,3 @@
-//allows entire entry to be clicked to check
-
 Array.prototype.slice.call(document.getElementsByTagName('li'))
     .forEach(function(li){
         var cb = li.childNodes[0]
@@ -12,51 +10,46 @@ Array.prototype.slice.call(document.getElementsByTagName('li'))
     })
 
 
-// add button function
-
 $(document).ready( function(){
-        displayList();
-        $("#addButton").click(addItem);
+        displayDictionary();
+        $("#addButton").click(addWord);
 
         $("#clearButton").click(function(){
-          localStorage.removeItem('theList');
-          $('#itemList').html(" ");
+          localStorage.removeItem('theDictionary');
+          $('#wordList').html(" ");
         });
       });
 
-      function addItem(e) {
+      function addWord(e) {
         var entry = {};
-        entry.word = $("#item").val();
+        entry.word = $("#word").val();
+        // entry.definition = $("#definition").val();
 
-        var list = getList();
-        list.push(entry);
-        saveList(list);
-        displayList(getList());
+        var dictionary = getDictionary();
+        dictionary.push(entry);
+        saveDictionary(dictionary);
+        displayDictionary(getDictionary());
         e.preventDefault();
       }
 
-      function displayList(){
-        var d = getList();
-        $itemList = $('#itemList');
-        $itemList.html(" ");
+      function displayDictionary(){
+        var d = getDictionary();
+        $wordList = $('#wordList');
+        $wordList.html(" ");
         $.each(d, function(index, entry){
-          $itemList.prepend("<dt>" + entry.item + "</dt><dd>" + "</dd>");
+          $wordList.append("<li>" + "<input type='checkbox'/>" + entry.word + "</label></li><dd>" + "</dd>");
+          	$("li").addClass("wordList")
         });
       }
 
-      function getList(){
-        if (localStorage.getItem('theList') === null){
+      function getDictionary(){
+        if (localStorage.getItem('theDictionary') === null){
           return([]);
         } else {
-          return(JSON.parse(localStorage.getItem('theList')));
+          return(JSON.parse(localStorage.getItem('theDictionary')));
         }
       }
 
       function saveDictionary(d) {
-        localStorage.setItem('theList', JSON.stringify(d));
+        localStorage.setItem('theDictionary', JSON.stringify(d));
       }
-
-
-
-
-

@@ -1,6 +1,6 @@
 body{
     font-family: Courier, sans-serif;
-    padding: 0px;
+    padding: 10px;
     margin: 0px;
 }
 
@@ -10,15 +10,25 @@ ul{
     margin: 0px;
 }
 
-li{
+/*li{
     border-top-style: dashed;
     border-width: 2px;
-    /*border-bottom-style: dotted;*/
     border
     clear: left;
     font-size: 20px;
     padding: 3px 0px 3px 10px;
     margin: 0px;
+}*/
+
+.wordList {
+  list-style: none;
+  border-top-style: dashed;
+  border-width: 2px;
+  border
+  clear: left;
+  font-size: 20px;
+  padding: 3px 0px 3px 10px;
+  margin: 0px;
 }
 
 li input{
@@ -40,3 +50,13 @@ h1{
     background-color: #eee;
     margin: 0;
 }
+
+/*dt {
+  border-top-style: dashed;
+    border-width: 2px;
+    border
+    clear: left;
+    font-size: 20px;
+    padding: 3px 0px 3px 10px;
+    margin: 0px;
+}*/
