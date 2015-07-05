@@ -4,31 +4,21 @@ body{
     margin: 0px;
 }
 
-ul{
-    list-style: none;
-    padding: 0px;
-    margin: 0px;
-}
-
-/*li{
-    border-top-style: dashed;
-    border-width: 2px;
-    border
-    clear: left;
-    font-size: 20px;
-    padding: 3px 0px 3px 10px;
-    margin: 0px;
-}*/
-
-.wordList {
+.wordList li{
   list-style: none;
-  border-top-style: dashed;
+  border-bottom-style: dashed;
   border-width: 2px;
   border
   clear: left;
   font-size: 20px;
-  padding: 3px 0px 3px 10px;
+  padding: 0px;
+  padding-bottom: 5px;
+  padding-top: 5px;
   margin: 0px;
+}
+
+.wordList li:first-child {
+  border-top-style: dashed;
 }
 
 li input{
@@ -38,25 +28,11 @@ li input{
     height: 25px;
 }
 
-li:last-child {
-    border-bottom-style: dashed;
-}
+
 
 h1{
     font-family: Helvetica, Arial, Verdana, sans-serif;
     font-size: 40px;
-    /*padding: 0.2em 0.5em;*/
-    /*border-bottom: solid 1px #aaa;*/
     background-color: #eee;
     margin: 0;
 }
-
-/*dt {
-  border-top-style: dashed;
-    border-width: 2px;
-    border
-    clear: left;
-    font-size: 20px;
-    padding: 3px 0px 3px 10px;
-    margin: 0px;
-}*/

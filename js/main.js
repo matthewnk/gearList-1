@@ -13,6 +13,7 @@ Array.prototype.slice.call(document.getElementsByTagName('li'))
 $(document).ready( function(){
         displayDictionary();
         $("#addButton").click(addWord);
+        $("#addButton").click(clearEntry);
 
         $("#clearButton").click(function(){
           localStorage.removeItem('theDictionary');
@@ -30,6 +31,11 @@ $(document).ready( function(){
         saveDictionary(dictionary);
         displayDictionary(getDictionary());
         e.preventDefault();
+      }
+
+      function clearEntry (input, val) {
+      	if (input.value == val)
+      		input.value="";
       }
 
       function displayDictionary(){
