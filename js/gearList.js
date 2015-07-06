@@ -12,17 +12,18 @@ Array.prototype.slice.call(document.getElementsByTagName('li'))
 
 $(document).ready( function(){
         displayDictionary();
-        $("#addButton").click(addList);
+        $("#addButton").click(addWord);
+        $("#addButton").click(clearEntry);
 
         $("#clearButton").click(function(){
           localStorage.removeItem('theDictionary');
-          $('#listList').html(" ");
+          $('#wordList').html(" ");
         });
       });
 
-      function addList(e) {
+      function addWord(e) {
         var entry = {};
-        entry.list = $("#list").val();
+        entry.word = $("#word").val();
         // entry.definition = $("#definition").val();
 
         var dictionary = getDictionary();
@@ -32,13 +33,18 @@ $(document).ready( function(){
         e.preventDefault();
       }
 
+      function clearEntry (input, val) {
+      	if (input.value == val)
+      		input.value="";
+      }
+
       function displayDictionary(){
         var d = getDictionary();
-        $listList = $('#listList');
-        $listList.html(" ");
+        $wordList = $('#wordList');
+        $wordList.html(" ");
         $.each(d, function(index, entry){
-          $listList.append("<li>" + entry.word + "</label></li><dd>" + "</dd>");
-          	$("li").addClass("listList")
+          $wordList.append("<li>" + "<input type='checkbox'/>" + entry.word + "</label></li><dd>" + "</dd>");
+          	$("li").addClass("wordList")
         });
       }
 
