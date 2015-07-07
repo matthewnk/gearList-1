@@ -1,61 +1,47 @@
-Array.prototype.slice.call(document.getElementsByTagName('li'))
-    .forEach(function(li){
-        var cb = li.childNodes[0]
-        cb.addEventListener('click', function(e){
-            e.stopPropagation()
-        })
-        li.addEventListener('click', function(){
-            cb.checked = !cb.checked
-        }, false)
-    })
-
 
 $(document).ready( function(){
-        displayDictionary();
-        $("#addButton").click(addWord);
-        $("#addButton").click(clearEntry);
+		displayGearList();
+		$("#addButton").click(addItem);
+		$("#clearButton").click(function(){
+		  localStorage.removeItem('theList');
+		  $('#gearList').html(" ");
+		});
+	});
 
-        $("#clearButton").click(function(){
-          localStorage.removeItem('theDictionary');
-          $('#wordList').html(" ");
-        });
-      });
+function addItem(e) {
+  var entry = {};
+  entry.item = $("#item").val();
 
-      function addWord(e) {
-        var entry = {};
-        entry.word = $("#word").val();
-        // entry.definition = $("#definition").val();
+  var dictionary = getDictionary();
+  dictionary.push(entry);
+  saveDictionary(dictionary);
+  displayGearList(getDictionary());
+  e.preventDefault();
+}
 
-        var dictionary = getDictionary();
-        dictionary.push(entry);
-        saveDictionary(dictionary);
-        displayDictionary(getDictionary());
-        e.preventDefault();
-      }
+function clearEntry (input, val) {
+	if (input.value == val)
+		input.value="";
+}
 
-      function clearEntry (input, val) {
-      	if (input.value == val)
-      		input.value="";
-      }
+function displayGearList(){
+  var d = getDictionary();
+  $gearList = $('#gearList');
+  $gearList.html(" ");
+  $.each(d, function(index, entry){
+    $gearList.append("<li>" + "<input type='checkbox'/>" + entry.item + "</label></li><dd>" + "</dd>");
+    	$("li").addClass("gearList")
+  });
+}
 
-      function displayDictionary(){
-        var d = getDictionary();
-        $wordList = $('#wordList');
-        $wordList.html(" ");
-        $.each(d, function(index, entry){
-          $wordList.append("<li>" + "<input type='checkbox'/>" + entry.word + "</label></li><dd>" + "</dd>");
-          	$("li").addClass("wordList")
-        });
-      }
+function getDictionary(){
+  if (localStorage.getItem('theList') === null){
+    return([]);
+  } else {
+    return(JSON.parse(localStorage.getItem('theList')));
+  }
+}
 
-      function getDictionary(){
-        if (localStorage.getItem('theDictionary') === null){
-          return([]);
-        } else {
-          return(JSON.parse(localStorage.getItem('theDictionary')));
-        }
-      }
-
-      function saveDictionary(d) {
-        localStorage.setItem('theDictionary', JSON.stringify(d));
-      }
+function saveDictionary(d) {
+  localStorage.setItem('theList', JSON.stringify(d));
+}

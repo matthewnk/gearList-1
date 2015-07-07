@@ -47,7 +47,7 @@ h1{
   border-top-style: dashed;
 }
 
-.wordList li{
+.gearList li{
   list-style: none;
   border-bottom-style: dashed;
   border-width: 2px;
@@ -59,11 +59,11 @@ h1{
   margin: 0px;
 }
 
-.wordList li:first-child {
+.gearList li:first-child {
   border-top-style: dashed;
 }
 
-.wordList li input {
+.gearList li input {
     float: left;
     margin-right: 15px;
     width: 25px;
@@ -81,4 +81,10 @@ h1{
   padding-bottom: 0px;
   background-color: #eee;
   opacity: .7;
+}
+
+/*checkbox styles*/
+
+li input {
+
 }
