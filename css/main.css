@@ -64,14 +64,15 @@ h1{
 }
 
 .gearList li input {
-    float: left;
-    margin-right: 15px;
-    width: 25px;
-    height: 25px;
+  float: left;
+  margin-right: 15px;
+  width: 25px;
+  height: 25px;
 }
 
-.gearList li {
-  
+.gearList li input {
+  position: absolute;
+  left: -9999px;
 }
 
 .footer {  position: fixed;
