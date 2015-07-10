@@ -29,7 +29,7 @@ function displayGearList(){
   $gearList = $('#gearList');
   $gearList.html(" ");
   $.each(d, function(index, entry){
-    $gearList.append("<li>" + "<input type='checkbox'/>" + entry.item + "</label></li><dd>" + "</dd>");
+    $gearList.append("<label>" + "<li>" + "<input type='checkbox'/>" + entry.item + "</label></li><dd>" + "</dd>");
     	$("li").addClass("gearList")
   });
 }

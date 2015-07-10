@@ -73,6 +73,11 @@ h1{
 .gearList li input {
   position: absolute;
   left: -9999px;
+  background-color: #ab576c;
+}
+
+.gearList li input + label {
+  background-color: #ab576c;
 }
 
 .footer {  position: fixed;

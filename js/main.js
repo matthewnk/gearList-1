@@ -37,7 +37,7 @@ $(document).ready( function(){
         $listList = $('#listList');
         $listList.html(" ");
         $.each(d, function(index, entry){
-          $listList.append("<li>" + entry.word + "</label></li><dd>" + "</dd>");
+          $listList.append("<label>" + "<li>" + entry.word + "</label></li><dd>" + "</dd>");
           	$("li").addClass("listList")
         });
       }
